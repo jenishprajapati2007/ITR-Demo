@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+ <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-FX7XS2B6NH"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-FX7XS2B6NH');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>e-ITR Return Analysis & Filing Demo</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+<div class="brand">
+<div class="logo-mark" aria-label="Income Tax Return demo logo">
+  <span class="logo-shield">₹</span><span class="logo-itr">ITR</span>
+</div>
+<div>
+<h1>Income Tax Return — Demo Filing</h1>
+<p>Digital Income Tax Return preparation and calculation — demonstration</p>
+</div>
+</div>
+<div class="badge">DEMO • NOT AN OFFICIAL PORTAL</div>
+</header>
+<div class="top-note"><strong>Project Demonstration:</strong> This application is a student/demo interface for income-tax return analysis. It is not connected to the Income Tax Department, RBI, banks, or any government filing system.</div>
+<main class="container">
+<div class="progress">
+<div class="step active">01 Personal</div>
+<div class="step">02 Bank</div>
+<div class="step">03 Income</div>
+<div class="step">04 Salary</div>
+<div class="step">05 Tax</div>
+<div class="step">06 Deductions</div>
+<div class="step">07 Final</div>
+<div class="step">08 Submit</div>
+</div>
+<div class="form-card">
+<section class="section active">
+<div class="section-head"><div><h2>Personal Details</h2><p>Enter taxpayer identification and contact information.</p></div><span
+class="number">STEP 01</span></div>
+<div class="grid">
+<div class="field"><label>Full Name</label><input id="name" placeholder="Enter full name"></div>
+<div class="field"><label>PAN Number</label><input id="pan" maxlength="10" placeholder="ABCDE1234F"
+style="text-transform:uppercase"></div>
+<div class="field"><label>Aadhaar Number</label><input id="aadhaar" maxlength="12" placeholder="12-digit Aadhaar number"></div>
+<div class="field"><label>Date of Birth</label><input id="dob" type="date"></div>
+<div class="field full"><label>Address</label><textarea id="address" placeholder="House / Street / City / State / PIN
+Code"></textarea></div>
+<div class="field"><label>Mobile Number</label><input id="mobile" maxlength="10" placeholder="10-digit mobile number"></div>
+<div class="field"><label>Email ID</label><input id="email" type="email" placeholder="example@email.com"></div>
+</div>
+</section>
+<section class="section">
+<div class="section-head"><div><h2>Bank Details</h2><p>Provide the bank account details used for refund or tax-related
+processing.</p></div><span class="number">STEP 02</span></div>
+<div class="grid">
+<div class="field"><label>Bank Name</label><input id="bank" placeholder="Enter bank name"></div>
+<div class="field"><label>Account Number</label><input id="account" placeholder="Enter account number"></div>
+<div class="field"><label>IFSC Code</label><input id="ifsc" placeholder="ABCD0123456" style="text-transform:uppercase"></div>
+<div class="field"><label>Account Type</label><select id="accountType"><option value="">Select account
+type</option><option>Savings</option><option>Current</option><option>NRE</option><option>NRO</option></select></div>
+</div>
+</section>
+<section class="section">
+<div class="section-head"><div><h2>Income Details</h2><p>Enter income received from different sources during the financial
+year.</p></div><span class="number">STEP 03</span></div>
+<div class="grid">
+<div class="field"><label>Salary Income ( )</label><input class="money" id="salaryIncome" type="number" min="0"
+placeholder="0"></div>
+<div class="field"><label>Business / Profession Income ( )</label><input class="money" id="businessIncome" type="number" min="0"
+placeholder="0"></div>
+<div class="field"><label>Bank Interest ( )</label><input class="money" id="interest" type="number" min="0"
+placeholder="0"></div>
+<div class="field"><label>Other Income ( )</label><input class="money" id="otherIncome" type="number" min="0"
+placeholder="0"></div>
+</div>
+<div class="summary"><b>Income Preview</b><div class="summary-grid"><div class="summary-item"><small>Total Income
+Sources</small><strong id="incomePreview"> 0</strong></div></div></div>
+</section>
+<section class="section">
+<div class="section-head"><div><h2>Salary Details</h2><p>Provide gross salary, allowances and employer information.</p></div><span
+class="number">STEP 04</span></div>
+<div class="grid">
+<div class="field"><label>Gross Salary ( )</label><input class="money" id="grossSalary" type="number" min="0"
+placeholder="0"></div>
+<div class="field"><label>Allowances ( )</label><input class="money" id="allowances" type="number" min="0" placeholder="0"></div>
+<div class="field"><label>Taxable Salary ( )</label><input class="money" id="taxableSalary" type="number" min="0"
+placeholder="0"></div>
+<div class="field"><label>Employer Details</label><input id="employer" placeholder="Employer / Company name"></div>
+</div>
+</section>
+<section class="section">
+<div class="section-head"><div><h2>Tax Review</h2><p>Tax figures are calculated from the income and deductions entered above.</p></div><span
+class="number">STEP 05</span></div>
+<div class="grid">
+<div class="field"><label>Total Income ( )</label><input class="money" id="totalIncome" type="number" min="0"
+placeholder="0"></div>
+<div class="field"><label>Taxable Income ( )</label><input class="money" id="taxableIncome" type="number" min="0"
+placeholder="0"></div>
+<div class="field"><label>Income Tax (₹)</label><input class="money" id="incomeTax" type="number" min="0" readonly placeholder="0"></div>
+<div class="field"><label>Health & Education Cess (₹)</label><input class="money" id="cess" type="number" min="0" readonly placeholder="0"></div>
+<div class="field"><label>TDS Deducted ( )</label><input class="money" id="tds" type="number" min="0" placeholder="0"></div>
+</div>
+</section>
+<section class="section">
+<div class="section-head"><div><h2>Deductions</h2><p>Enter eligible deductions as applicable to your tax filing.</p></div><span
+class="number">STEP 06</span></div>
+<div class="grid">
+<div class="field"><label>Section 80C ( )</label><input class="money" id="d80c" type="number" min="0" placeholder="0"></div>
+<div class="field"><label>Section 80D ( )</label><input class="money" id="d80d" type="number" min="0" placeholder="0"></div>
+<div class="field full"><label>Other Applicable Deductions ( )</label><input class="money" id="otherDeduction" type="number"
+min="0" placeholder="0"></div>
+</div>
+</section>
+<section class="section">
+<div class="section-head"><div><h2>Final Calculation</h2><p>Review the entered figures before moving to
+verification.</p></div><span class="number">STEP 07</span></div>
+<div class="summary">
+<div class="summary-grid">
+<div class="summary-item"><small>Total Tax Payable</small><strong id="finalTax"> 0</strong></div>
+<div class="summary-item"><small>Tax Already Paid / TDS</small><strong id="finalTDS"> 0</strong></div>
+<div class="summary-item"><small>Final Status</small><strong id="finalStatus">—</strong></div>
+</div>
+</div>
+<p class="notice">This interface performs a basic demo calculation from entered values. Actual ITR computation, tax regime rules,
+exemptions, limits and validation should be verified against the applicable Income Tax Department rules before filing.</p>
+</section>
+<section class="section">
+<div class="section-head"><div><h2>Verification & Submission</h2><p>Complete the final declaration and select your submission
+method.</p></div><span class="number">STEP 08</span></div>
+<div class="verify">
+<label>Demo Verification Method</label>
+<select id="verifyMethod">
+<option value="">Select method</option>
+<option>Demo: Aadhaar OTP flow (not sent)</option>
+<option>Demo: Bank / Demat flow (not sent)</option>
+<option>Demo: Verify later</option>
+</select>
+<label class="check"><input type="checkbox" id="declaration"> I confirm that the information entered in this demo form is correct
+to the best of my knowledge.</label>
+<label class="check"><input type="checkbox" id="consent"> I understand that this interface is a demonstration and is not directly
+connected to the Income Tax Department filing system.</label>
+<button class="success" id="submitBtn" disabled onclick="submitITR()">✓ Submit Return Demo & View Result</button>
+<p class="notice">For actual filing, use the official Income Tax e-Filing portal and follow the current government verification
+process.</p>
+</div>
+</section>
+<div class="actions">
+<button class="secondary" id="prevBtn" onclick="prevStep()" disabled>← Previous</button>
+<button id="nextBtn" onclick="nextStep()">Next Step →</button>
+</div>
+</div>
+</main>
+<div class="modal" id="modal">
+ <div class="modal-box">
+  <div class="success-icon">✓</div>
+  <h2>Return Analysis Completed</h2>
+  <p id="resultIntro">Your entered return data has been processed successfully in this demo.</p>
+  <div class="receipt">
+   <div class="receipt-head">Demo Return Summary</div>
+   <div class="receipt-row"><span>Acknowledgement Reference</span><strong id="ackNo">—</strong></div>
+   <div class="receipt-row"><span>Taxpayer Name</span><strong id="receiptName">—</strong></div>
+   <div class="receipt-row"><span>PAN</span><strong id="receiptPan">—</strong></div>
+   <div class="receipt-row"><span>Total Income</span><strong id="receiptIncome">₹0</strong></div>
+   <div class="receipt-row"><span>Taxable Income</span><strong id="receiptTaxable">₹0</strong></div>
+   <div class="receipt-row"><span>Total Tax Liability</span><strong id="receiptTax">₹0</strong></div>
+   <div class="receipt-row"><span>Tax Already Paid / TDS</span><strong id="receiptPaid">₹0</strong></div>
+   <div class="receipt-row"><span>Final Result</span><strong id="receiptStatus">—</strong></div>
+  </div>
+  <div class="result-highlight"><strong>What this means:</strong><br><span id="resultExplanation">—</span></div>
+  <p class="notice">This reference is generated only by the demo application. It is not a government acknowledgement number and no return has been submitted to any authority.</p>
+  <button onclick="closeModal()">Close Result</button>
+ </div>
+</div>
+
+  <script src="script.js"></script>
+</body>
+</html>
